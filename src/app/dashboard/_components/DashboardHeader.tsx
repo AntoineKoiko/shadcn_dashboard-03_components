@@ -38,7 +38,33 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 
+import {
+    SelectWithIconField,
+    SelectItemWithIconProps,
+} from "./_froms/SelectWithIconFieldField";
+
 export const DashboardHeader = () => {
+    const selectModelChoice: SelectItemWithIconProps[] = [
+        {
+            value: "genesis",
+            icon: <Rabbit className="size-5" />,
+            title: "Genesis",
+            description: "Our fastest model for general use cases.",
+        },
+        {
+            value: "explorer",
+            icon: <Bird className="size-5" />,
+            title: "Explorer",
+            description: "Performance and speed for efficiency.",
+        },
+        {
+            value: "quantum",
+            icon: <Turtle className="size-5" />,
+            title: "Quantum",
+            description: "The most powerful model for complex computations.",
+        },
+    ];
+
     return (
         <header className="sticky top-0 z-10 flex h-[53px] items-center gap-1 border-b bg-background px-4">
             <h1 className="text-xl font-semibold">Playground</h1>
@@ -63,78 +89,12 @@ export const DashboardHeader = () => {
                                 Settings
                             </legend>
                             <div className="grid gap-3">
-                                <Label htmlFor="model">Model</Label>
-                                <Select>
-                                    <SelectTrigger
-                                        id="model"
-                                        className="items-start [&_[data-description]]:hidden"
-                                    >
-                                        <SelectValue placeholder="Select a model" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="genesis">
-                                            <div className="flex items-start gap-3 text-muted-foreground">
-                                                <Rabbit className="size-5" />
-                                                <div className="grid gap-0.5">
-                                                    <p>
-                                                        Neural{" "}
-                                                        <span className="font-medium text-foreground">
-                                                            Genesis
-                                                        </span>
-                                                    </p>
-                                                    <p
-                                                        className="text-xs"
-                                                        data-description
-                                                    >
-                                                        Our fastest model for
-                                                        general use cases.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </SelectItem>
-                                        <SelectItem value="explorer">
-                                            <div className="flex items-start gap-3 text-muted-foreground">
-                                                <Bird className="size-5" />
-                                                <div className="grid gap-0.5">
-                                                    <p>
-                                                        Neural{" "}
-                                                        <span className="font-medium text-foreground">
-                                                            Explorer
-                                                        </span>
-                                                    </p>
-                                                    <p
-                                                        className="text-xs"
-                                                        data-description
-                                                    >
-                                                        Performance and speed
-                                                        for efficiency.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </SelectItem>
-                                        <SelectItem value="quantum">
-                                            <div className="flex items-start gap-3 text-muted-foreground">
-                                                <Turtle className="size-5" />
-                                                <div className="grid gap-0.5">
-                                                    <p>
-                                                        Neural{" "}
-                                                        <span className="font-medium text-foreground">
-                                                            Quantum
-                                                        </span>
-                                                    </p>
-                                                    <p
-                                                        className="text-xs"
-                                                        data-description
-                                                    >
-                                                        The most powerful model
-                                                        for complex
-                                                        computations.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </SelectItem>
-                                    </SelectContent>
-                                </Select>
+                                <SelectWithIconField
+                                    label="Model"
+                                    id="model"
+                                    placeholder="Select a model"
+                                    items={selectModelChoice}
+                                />
                             </div>
                             <div className="grid gap-3">
                                 <Label htmlFor="temperature">Temperature</Label>

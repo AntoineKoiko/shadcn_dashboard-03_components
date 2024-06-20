@@ -38,77 +38,13 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 
+import { SelectField } from "./_froms/SelectWithIconFieldField";
+import { FieldSet } from "./_froms/FieldSet";
+
 export const DashboardPanelForm = () => {
     return (
         <form className="grid w-full items-start gap-6 overflow-auto p-4 pt-0">
-            <fieldset className="grid gap-6 rounded-lg border p-4">
-                <legend className="-ml-1 px-1 text-sm font-medium">
-                    Settings
-                </legend>
-                <div className="grid gap-3">
-                    <Label htmlFor="model">Model</Label>
-                    <Select>
-                        <SelectTrigger
-                            id="model"
-                            className="items-start [&_[data-description]]:hidden"
-                        >
-                            <SelectValue placeholder="Select a model" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectItem value="genesis">
-                                <div className="flex items-start gap-3 text-muted-foreground">
-                                    <Rabbit className="size-5" />
-                                    <div className="grid gap-0.5">
-                                        <p>
-                                            Neural{" "}
-                                            <span className="font-medium text-foreground">
-                                                Genesis
-                                            </span>
-                                        </p>
-                                        <p className="text-xs" data-description>
-                                            Our fastest model for general use
-                                            cases.
-                                        </p>
-                                    </div>
-                                </div>
-                            </SelectItem>
-                            <SelectItem value="explorer">
-                                <div className="flex items-start gap-3 text-muted-foreground">
-                                    <Bird className="size-5" />
-                                    <div className="grid gap-0.5">
-                                        <p>
-                                            Neural{" "}
-                                            <span className="font-medium text-foreground">
-                                                Explorer
-                                            </span>
-                                        </p>
-                                        <p className="text-xs" data-description>
-                                            Performance and speed for
-                                            efficiency.
-                                        </p>
-                                    </div>
-                                </div>
-                            </SelectItem>
-                            <SelectItem value="quantum">
-                                <div className="flex items-start gap-3 text-muted-foreground">
-                                    <Turtle className="size-5" />
-                                    <div className="grid gap-0.5">
-                                        <p>
-                                            Neural{" "}
-                                            <span className="font-medium text-foreground">
-                                                Quantum
-                                            </span>
-                                        </p>
-                                        <p className="text-xs" data-description>
-                                            The most powerful model for complex
-                                            computations.
-                                        </p>
-                                    </div>
-                                </div>
-                            </SelectItem>
-                        </SelectContent>
-                    </Select>
-                </div>
+            <FieldSet legend="Settings">
                 <div className="grid gap-3">
                     <Label htmlFor="temperature">Temperature</Label>
                     <Input id="temperature" type="number" placeholder="0.4" />
@@ -121,7 +57,7 @@ export const DashboardPanelForm = () => {
                     <Label htmlFor="top-k">Top K</Label>
                     <Input id="top-k" type="number" placeholder="0.0" />
                 </div>
-            </fieldset>
+            </FieldSet>
             <fieldset className="grid gap-6 rounded-lg border p-4">
                 <legend className="-ml-1 px-1 text-sm font-medium">
                     Messages
