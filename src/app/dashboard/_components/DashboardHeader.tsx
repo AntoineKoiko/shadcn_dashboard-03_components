@@ -1,22 +1,4 @@
-import {
-    Bird,
-    Book,
-    Bot,
-    Code2,
-    CornerDownLeft,
-    LifeBuoy,
-    Mic,
-    Paperclip,
-    Rabbit,
-    Settings,
-    Settings2,
-    Share,
-    Sidebar,
-    SquareTerminal,
-    SquareUser,
-    Triangle,
-    Turtle,
-} from "lucide-react";
+import { Bird, Rabbit, Settings, Share, Turtle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -27,21 +9,18 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
 
+import { FieldSet } from "./_froms/FieldSet";
 import {
     SelectWithIconField,
     SelectItemWithIconProps,
 } from "./_froms/SelectWithIconFieldField";
+import { InputField } from "./_froms/InputField";
+import { TextAreaField } from "./_froms/TextAreaField";
+import {
+    SelectWithTextField,
+    SelectItemWithTextProps,
+} from "./_froms/SelectWithTextField";
 
 export const DashboardHeader = () => {
     const selectModelChoice: SelectItemWithIconProps[] = [
@@ -64,6 +43,11 @@ export const DashboardHeader = () => {
             description: "The most powerful model for complex computations.",
         },
     ];
+    const selectRoleChoice: SelectItemWithTextProps[] = [
+        { value: "system", label: "System" },
+        { value: "user", label: "User" },
+        { value: "assistant", label: "Assistant" },
+    ];
 
     return (
         <header className="sticky top-0 z-10 flex h-[53px] items-center gap-1 border-b bg-background px-4">
@@ -84,10 +68,7 @@ export const DashboardHeader = () => {
                     </DrawerHeader>
 
                     <form className="grid w-full items-start gap-6 overflow-auto p-4 pt-0">
-                        <fieldset className="grid gap-6 rounded-lg border p-4">
-                            <legend className="-ml-1 px-1 text-sm font-medium">
-                                Settings
-                            </legend>
+                        <FieldSet legend="Settings">
                             <div className="grid gap-3">
                                 <SelectWithIconField
                                     label="Model"
@@ -96,62 +77,40 @@ export const DashboardHeader = () => {
                                     items={selectModelChoice}
                                 />
                             </div>
+                            <InputField
+                                id="temperature"
+                                label="Temperature"
+                                type="number"
+                                placeholder="0.4"
+                            />
+                            <InputField
+                                id="top-p"
+                                type="number"
+                                label="Top P"
+                                placeholder="0.7"
+                            />
+                            <InputField
+                                id="top-k"
+                                type="number"
+                                label="Top K"
+                                placeholder="0.0"
+                            />
+                        </FieldSet>
+                        <FieldSet legend="Messages">
                             <div className="grid gap-3">
-                                <Label htmlFor="temperature">Temperature</Label>
-                                <Input
-                                    id="temperature"
-                                    type="number"
-                                    placeholder="0.4"
+                                <SelectWithTextField
+                                    label="Role"
+                                    id="role"
+                                    placeholder="Select a role"
+                                    items={selectRoleChoice}
                                 />
                             </div>
-                            <div className="grid gap-3">
-                                <Label htmlFor="top-p">Top P</Label>
-                                <Input
-                                    id="top-p"
-                                    type="number"
-                                    placeholder="0.7"
-                                />
-                            </div>
-                            <div className="grid gap-3">
-                                <Label htmlFor="top-k">Top K</Label>
-                                <Input
-                                    id="top-k"
-                                    type="number"
-                                    placeholder="0.0"
-                                />
-                            </div>
-                        </fieldset>
-                        <fieldset className="grid gap-6 rounded-lg border p-4">
-                            <legend className="-ml-1 px-1 text-sm font-medium">
-                                Messages
-                            </legend>
-                            <div className="grid gap-3">
-                                <Label htmlFor="role">Role</Label>
-                                <Select defaultValue="system">
-                                    <SelectTrigger>
-                                        <SelectValue placeholder="Select a role" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="system">
-                                            System
-                                        </SelectItem>
-                                        <SelectItem value="user">
-                                            User
-                                        </SelectItem>
-                                        <SelectItem value="assistant">
-                                            Assistant
-                                        </SelectItem>
-                                    </SelectContent>
-                                </Select>
-                            </div>
-                            <div className="grid gap-3">
-                                <Label htmlFor="content">Content</Label>
-                                <Textarea
-                                    id="content"
-                                    placeholder="You are a..."
-                                />
-                            </div>
-                        </fieldset>
+                            <TextAreaField
+                                id="content"
+                                label="Content"
+                                placeholder="You are a..."
+                            />
+                        </FieldSet>
                     </form>
                 </DrawerContent>
             </Drawer>
