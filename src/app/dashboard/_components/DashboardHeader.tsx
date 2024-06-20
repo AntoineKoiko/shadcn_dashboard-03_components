@@ -14,7 +14,7 @@ import { FieldSet } from "./_froms/FieldSet";
 import {
     SelectWithIconField,
     SelectItemWithIconProps,
-} from "./_froms/SelectWithIconFieldField";
+} from "./_froms/SelectWithIconField";
 import { InputField } from "./_froms/InputField";
 import { TextAreaField } from "./_froms/TextAreaField";
 import {
@@ -29,18 +29,21 @@ export const DashboardHeader = () => {
             icon: <Rabbit className="size-5" />,
             title: "Genesis",
             description: "Our fastest model for general use cases.",
+            category: "Neural",
         },
         {
             value: "explorer",
             icon: <Bird className="size-5" />,
             title: "Explorer",
             description: "Performance and speed for efficiency.",
+            category: "Neural",
         },
         {
             value: "quantum",
             icon: <Turtle className="size-5" />,
             title: "Quantum",
             description: "The most powerful model for complex computations.",
+            category: "Neural",
         },
     ];
     const selectRoleChoice: SelectItemWithTextProps[] = [
