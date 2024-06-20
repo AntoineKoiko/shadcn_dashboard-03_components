@@ -3,14 +3,14 @@ import { Bird, Rabbit, Turtle } from "lucide-react";
 import {
     SelectWithIconField,
     SelectItemWithIconProps,
-} from "./_froms/SelectWithIconField";
-import { InputField } from "./_froms/InputField";
-import { FieldSet } from "./_froms/FieldSet";
+} from "./_forms/SelectWithIconField";
+import { InputField } from "./_forms/InputField";
+import { FieldSet } from "./_forms/FieldSet";
 import {
     SelectWithTextField,
     SelectItemWithTextProps,
-} from "./_froms/SelectWithTextField";
-import { TextAreaField } from "./_froms/TextAreaField";
+} from "./_forms/SelectWithTextField";
+import { TextAreaField } from "./_forms/TextAreaField";
 
 export const DashboardLeftPanel = () => {
     const selectModelChoice: SelectItemWithIconProps[] = [

@@ -10,17 +10,17 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer";
 
-import { FieldSet } from "./_froms/FieldSet";
+import { FieldSet } from "./_forms/FieldSet";
 import {
     SelectWithIconField,
     SelectItemWithIconProps,
-} from "./_froms/SelectWithIconField";
-import { InputField } from "./_froms/InputField";
-import { TextAreaField } from "./_froms/TextAreaField";
+} from "./_forms/SelectWithIconField";
+import { InputField } from "./_forms/InputField";
+import { TextAreaField } from "./_forms/TextAreaField";
 import {
     SelectWithTextField,
     SelectItemWithTextProps,
-} from "./_froms/SelectWithTextField";
+} from "./_forms/SelectWithTextField";
 
 export const DashboardHeader = () => {
     const selectModelChoice: SelectItemWithIconProps[] = [

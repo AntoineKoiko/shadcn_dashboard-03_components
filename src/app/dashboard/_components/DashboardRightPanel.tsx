@@ -2,15 +2,9 @@ import { CornerDownLeft, Mic, Paperclip } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipTrigger,
-} from "@/components/ui/tooltip";
 
-import { TextAreaField } from "./_froms/TextAreaField";
+import { ToolTipText } from "./ux/ToolTipText";
+import { TextAreaField } from "./_forms/TextAreaField";
 
 export const DashboardRightPanel = () => {
     return (
@@ -32,26 +26,19 @@ export const DashboardRightPanel = () => {
                 />
 
                 <div className="flex items-center p-3 pt-0">
-                    <Tooltip>
-                        <TooltipTrigger asChild>
-                            <Button variant="ghost" size="icon">
-                                <Paperclip className="size-4" />
-                                <span className="sr-only">Attach file</span>
-                            </Button>
-                        </TooltipTrigger>
-                        <TooltipContent side="top">Attach File</TooltipContent>
-                    </Tooltip>
-                    <Tooltip>
-                        <TooltipTrigger asChild>
-                            <Button variant="ghost" size="icon">
-                                <Mic className="size-4" />
-                                <span className="sr-only">Use Microphone</span>
-                            </Button>
-                        </TooltipTrigger>
-                        <TooltipContent side="top">
-                            Use Microphone
-                        </TooltipContent>
-                    </Tooltip>
+                    <ToolTipText text="Attach Ffile" side="top">
+                        <Button variant="ghost" size="icon">
+                            <Paperclip className="size-4" />
+                            <span className="sr-only">Attach file</span>
+                        </Button>
+                    </ToolTipText>
+                    <ToolTipText text="Use Microphone" side="top">
+                        <Button variant="ghost" size="icon">
+                            <Mic className="size-4" />
+                            <span className="sr-only">Use Microphone</span>
+                        </Button>
+                    </ToolTipText>
+
                     <Button type="submit" size="sm" className="ml-auto gap-1.5">
                         Send Message
                         <CornerDownLeft className="size-3.5" />
