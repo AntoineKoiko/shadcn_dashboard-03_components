@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { GithubIcon } from "./_components/GithubIcon";
 
 export default function Home() {
     return (
@@ -20,9 +21,21 @@ export default function Home() {
                         block proprosed by Shadcn/ui{" "}
                     </p>
                     <Button className="max-w-2xl mx-auto">
-                        <a href="/dashboard">Go to Dashboard</a>
+                        <Link href="/dashboard">Go to Dashboard</Link>
                     </Button>
                 </div>
+            </div>
+            <div className="absolute bottom-4 right-4">
+                <Button asChild className="p-2">
+                    <Link
+                        href="https://github.com/AntoineKoiko/shadcn_dashboard-03_components"
+                        className="flex items-center"
+                        target="_blank"
+                    >
+                        <p className="mr-2 hidden sm:block">View on Github</p>
+                        <GithubIcon size={24} />
+                    </Link>
+                </Button>
             </div>
         </main>
     );
