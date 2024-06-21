@@ -12,8 +12,6 @@ This is a simple one page App (two to be precise 😊) I made to familiarize me 
 
 I split the [`Dashboard-03`](https://ui.shadcn.com/blocks#dashboard-03) example bloc into several components, propposing a way to wrap and split some Shadcn/ui components.
 
---
-
 ## Getting Started
 
 First, run the development server:

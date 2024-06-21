@@ -3,8 +3,8 @@ import { CornerDownLeft, Mic, Paperclip } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-import { ToolTipText } from "./ux/ToolTipText";
-import { TextAreaField } from "./_forms/TextAreaField";
+import { ToolTipText } from "@/components/ux/ToolTipText";
+import { TextAreaField } from "@/components/_forms/TextAreaField";
 
 export const DashboardRightPanel = () => {
     return (
