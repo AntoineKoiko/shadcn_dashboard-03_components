@@ -10,7 +10,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 This is a simple one page App (two to be precise 😊) I made to familiarize me with [`Shadcn/ui`](https://ui.shadcn.com/)
 
-I split the [`Dashboard-03`](https://ui.shadcn.com/blocks#dashboard-03) example blok into several components, propposing a way to wrap and split some Shadcn/ui components
+I split the [`Dashboard-03`](https://ui.shadcn.com/blocks#dashboard-03) example bloc into several components, propposing a way to wrap and split some Shadcn/ui components.
 
 --
 
@@ -30,7 +30,11 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+
+You can find `Dashboard` main components in `src/app/dashboard/_components`.
+
+The more generics components can be found in `src/components`.
 
 ## Learn More
 
@@ -46,4 +50,4 @@ To learn more about Shadcn/ui:
 
 # Contribution
 
-Every contributions and comments are welcome
+Every contributions and comments are welcome!
