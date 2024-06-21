@@ -15,6 +15,7 @@ export default function Home() {
                         <Link
                             href="https://ui.shadcn.com/blocks#dashboard-03"
                             className="p-2 border-transparent rounded-md bg-slate-200 hover:bg-slate-300"
+                            target="_blank"
                         >
                             Dashboard-03
                         </Link>{" "}
